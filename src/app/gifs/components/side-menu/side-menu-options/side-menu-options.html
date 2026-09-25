@@ -1,0 +1,17 @@
+<nav aria-label="Dashboard" class="mt-4">
+  <!--  bg-gray-100 -->
+  <ul class="space-y-1">
+    @for (option of menuOptions; track option.route) {
+      <li>
+        <a href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-900 [.active]:bg-gray-100" [routerLink]="option.route" [routerLinkActive]="['active']"  >
+          <i [class]=" option.icon "></i>
+          
+          <span>
+            {{ option.label }}
+          </span>
+        </a>
+      </li>
+    }
+
+  </ul>
+</nav>
