@@ -1,5 +1,6 @@
-import { Component} from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { ProductsHeaderSearch } from './products-header-search/products-header-search';
+import { ProductsService } from 'app/gifs/services/products.service';
 
 
 @Component({
@@ -9,5 +10,6 @@ import { ProductsHeaderSearch } from './products-header-search/products-header-s
 })
 export class ProductsHeader {
 
+  productsService = inject(ProductsService);
 
 }

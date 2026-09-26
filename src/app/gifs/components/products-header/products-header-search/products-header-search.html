@@ -1,5 +1,5 @@
 <label for="TicketSearch" class="w-full block ">
-    <span class="sr-only">Buscar productos</span>
+    <span class="sr-only">Buscar {{ searchComponent() }}</span>
     <div class="relative">
       <svg
         aria-hidden="true"
@@ -19,10 +19,10 @@
       <input
         type="search"
         id="TicketSearch"
-        placeholder="Search products"
+        placeholder="{{ searchType() }} "
         #txtsearch
         (keyup.enter)="onSearch(+txtsearch.value)"
         class="w-full py-2 pl-9 rounded-md border border-gray-200 text-sm shadow-xs focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
       />
     </div>
-  </label>
+</label>

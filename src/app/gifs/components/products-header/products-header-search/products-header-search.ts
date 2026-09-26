@@ -1,5 +1,4 @@
-import { Component, inject, output } from '@angular/core';
-import { ProductsService } from 'app/gifs/services/products.service';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'products-header-search',
@@ -7,13 +6,15 @@ import { ProductsService } from 'app/gifs/services/products.service';
   templateUrl: './products-header-search.html',
 })
 export class ProductsHeaderSearch {
-  productService = inject(ProductsService);
-  // llamar instancia del singelton del servicio
   
+  searchComponent = input.required<string>();
+  searchType = input.required<string>();
 
-  onSearch(productUId : number) {
+  // llamar instancia del singelton del servicio
+  searchId = output<number>();
 
-    this.productService.loadProducts(productUId);
+  onSearch(id : number) {
+    this.searchId.emit(id);
   }
 
 }
