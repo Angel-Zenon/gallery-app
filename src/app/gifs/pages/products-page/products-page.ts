@@ -15,5 +15,5 @@ import { Product } from 'app/gifs/interfaces/product.interface';
 export default class ProductsPage {
   productsService = inject( ProductsService ); // llamamos a la instancia del servicio, 
   products = this.productsService.productsList; // accedemos a los items, los cualees son los productos, esto es una señal de un arreglo
- 
+
 }
