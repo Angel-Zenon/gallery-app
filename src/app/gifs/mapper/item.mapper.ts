@@ -1,11 +1,11 @@
 // recibimos el objeto de la api, y regresamos un objeto basado en nuestro tipo/interfaz donde en dicha interfaz especificamos que data queremos
 
-import { Product } from "../interfaces/product.interface";
-import { ProductsResponse } from "../interfaces/products.interface";
+import { Item } from "../interfaces/item.interface";
+import { ItemsResponse } from "../interfaces/items-response.interface";
 
-export class ProductMapper {
+export class ItemMapper {
 
-    static mapProductItemToProduct ( productItem : ProductsResponse) : Product {
+    static mapProductItemToProduct ( productItem : ItemsResponse) : Item {
         return {
             id : productItem.id,
             title : productItem.title,
@@ -16,7 +16,7 @@ export class ProductMapper {
         }
     }
 
-    static mapProductsItemsToProductArray( productItems: ProductsResponse[] ) : Product[] {
+    static mapProductsItemsToProductArray( productItems: ItemsResponse[] ) : Item[] {
         return productItems.map(  this.mapProductItemToProduct );
     }
 }

@@ -1,5 +1,5 @@
 // interface de los datos que recibimos de la api
-export interface ProductsResponse {
+export interface ItemsResponse {
     id:          number;
     title:       string;
     price:       number;

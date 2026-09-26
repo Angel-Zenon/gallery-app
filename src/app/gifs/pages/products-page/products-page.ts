@@ -2,7 +2,6 @@ import { Component, inject, Signal, signal } from '@angular/core';
 import { GifList } from '../../components/gif-list/gif-list/gif-list';
 import { ProductsHeader } from 'app/gifs/components/products-header/products-header';
 import { ProductsService } from 'app/gifs/services/products.service';
-import { Product } from 'app/gifs/interfaces/product.interface';
 
 
 

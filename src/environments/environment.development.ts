@@ -6,4 +6,6 @@ export const environment = {
 
 // apikeys
     apiUrl : 'https://fakestoreapi.com',
+    // api url DUMMY
+    API_DUMMY : 'https://dummyjson.com/',
 };

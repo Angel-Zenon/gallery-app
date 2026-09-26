@@ -1,16 +1,16 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable, signal } from "@angular/core";
 import { environment } from "environments/environment";
-import { ProductsResponse } from "../interfaces/products.interface";
-import { Product } from "../interfaces/product.interface";
-import { ProductMapper } from "../mapper/product.mapper";
+import { ItemsResponse } from "../interfaces/items-response.interface";
+import { Item } from "../interfaces/item.interface";
+import { ItemMapper } from "../mapper/item.mapper";
 
 @Injectable({
     providedIn : 'root'
 }) export class ProductsService {
     private http = inject(HttpClient); // inyectamos la dependencia de el httpclient
 
-    productsList = signal<Product[]>([]); // hacemos una señal, de un arreglo de productos 
+    productsList = signal<Item[]>([]); // hacemos una señal, de un arreglo de productos 
     productsListLoading =  signal<boolean>(true); // estatus de carga de nuestros productos
     
     constructor() {
@@ -25,24 +25,24 @@ import { ProductMapper } from "../mapper/product.mapper";
     }
 
     private getProductById(id: number) {
-        this.http.get<ProductsResponse>(`${ environment.apiUrl }/products/${id}`)
+        this.http.get<ItemsResponse>(`${ environment.apiUrl }/products/${id}`)
             .subscribe( (resp) => {
-                    const product = ProductMapper.mapProductItemToProduct(resp);
+                    const product = ItemMapper.mapProductItemToProduct(resp);
                     this.updateProductList(product);
                 }
             )
     }
 
     private getAllProducts() {
-        this.http.get<ProductsResponse[]>(`${ environment.apiUrl }/products`)
+        this.http.get<ItemsResponse[]>(`${ environment.apiUrl }/products`)
             .subscribe( (resp) => {
-                    const products = ProductMapper.mapProductsItemsToProductArray(resp);
+                    const products = ItemMapper.mapProductsItemsToProductArray(resp);
                     this.updateProductList(products);
                 }
             )
     }
 
-    updateProductList(product : Product | Product[]) {
+    updateProductList(product : Item | Item[]) {
         this.productsListLoading.set(false);
         if (Array.isArray(product)) this.productsList.set(product);
         else  this.productsList.set([product]);
