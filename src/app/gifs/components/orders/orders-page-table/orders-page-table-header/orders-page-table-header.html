@@ -1,0 +1,48 @@
+<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <h2 class="text-sm font-medium text-gray-900">All customers</h2>
+
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <label for="customer-search-input" class="sr-only">Search customers</label>
+
+          <div class="relative">
+            <input
+              type="text"
+              id="customer-search-input"
+              placeholder="Search customers"
+              class="w-full rounded-md border-gray-200 py-1.5 text-sm text-gray-900 shadow-xs sm:w-56 ltr:pr-9 rtl:pl-9"
+            />
+
+            <span
+              class="pointer-events-none absolute inset-y-0 grid w-8 place-content-center text-gray-400 ltr:right-0 rtl:left-0"
+            >
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+            </span>
+          </div>
+
+          <label for="customer-status-filter" class="sr-only">Filter by status</label>
+
+          <select
+            id="customer-status-filter"
+            class="rounded-md border-gray-200 py-1.5 text-sm text-gray-900 shadow-xs"
+          >
+            <option value="all">All statuses</option>
+            <option value="active">Active</option>
+            <option value="trial">Trial</option>
+            <option value="past-due">Past due</option>
+          </select>
+        </div>
+      </div>
