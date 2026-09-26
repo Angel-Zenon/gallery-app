@@ -1,6 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, input, Signal } from '@angular/core';
 import { GifListItem } from './gif-list-item/gif-list-item';
-import { ItemDetails } from 'app/gifs/interfaces/item-details.interface';
+import { Product } from 'app/gifs/interfaces/product.interface';
 
 
 @Component({
@@ -11,5 +11,6 @@ import { ItemDetails } from 'app/gifs/interfaces/item-details.interface';
 // SE CREA UN SERVICIO PARA HACER LA PETICION AL BACKEND CON ESTOS DATOS
 
 export class GifList {
-  listItems = input.required<ItemDetails[]>()
+  listProducts  = input<Product[]>(); // obtenemos la señal que nos paso ProductPage, como decimos, es una señal de un arreglo
+
 }
