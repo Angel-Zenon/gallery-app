@@ -18,6 +18,11 @@ export const routes: Routes = [
                 loadComponent:  () => 
                     import('./gifs/pages/products-page/products-page')
             },
+            {
+                path : 'orders',
+                loadComponent:  () => 
+                    import('./gifs/pages/orders-page/orders-page')
+            },
 
             {
                 path :  '**',

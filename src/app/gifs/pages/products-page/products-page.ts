@@ -8,7 +8,7 @@ import { Product } from 'app/gifs/interfaces/product.interface';
 
 
 @Component({
-  selector: 'app-products-page',
+  selector: 'products-page',
   imports: [GifList, ProductsHeader],
   templateUrl: './products-page.html',
 })

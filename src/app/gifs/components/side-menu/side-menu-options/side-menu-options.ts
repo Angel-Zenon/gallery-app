@@ -27,6 +27,12 @@ export class SideMenuOptions {
       label : 'Sales',
       subLabel : 'Ventas',
       route : '/dashboard/sales'
+    },
+    {
+      icon : 'fa-solid fa-shop', 
+      label : 'Orders',
+      subLabel : 'Ordenes',
+      route : '/dashboard/orders'
     }
   ] 
 }
