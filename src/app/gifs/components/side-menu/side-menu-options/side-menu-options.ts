@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { OrdersService } from 'app/gifs/services/orders.service';
 
 
 
@@ -15,7 +16,9 @@ interface MenuOption {
   templateUrl: './side-menu-options.html',
 })
 export class SideMenuOptions {
-  menuOptions:MenuOption[] = [
+  // acceder a searchHistoryKeys
+  
+  menuOptions = signal<MenuOption[]>([
     {
       icon : 'fa-solid fa-shirt', 
       label : 'Products',
@@ -34,5 +37,9 @@ export class SideMenuOptions {
       subLabel : 'Ordenes',
       route : '/dashboard/orders'
     }
-  ] 
+  ] );
+  
+  orderService = inject(OrdersService);
+  history = signal(this.orderService.searchHistoryKeys());
+
 }
