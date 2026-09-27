@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { ItemDetails } from 'app/gifs/interfaces/item-details.interface';
+import { Item } from 'app/gifs/interfaces/item.interface';
 
 
 
@@ -9,6 +9,6 @@ import { ItemDetails } from 'app/gifs/interfaces/item-details.interface';
   templateUrl: './gif-list-item.html',
 })
 export class GifListItem {
-  item = input.required<ItemDetails>();
+  product = input.required<Item>();
 
 }

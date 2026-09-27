@@ -1,4 +1,4 @@
 <header
     class="flex h-14 shrink-0  items-center gap-4 border-b border-gray-200 bg-white px-4 sm:px-6">
-    <products-header-search class="w-full" />
+    <products-header-search (searchId)="productsService.loadProducts($event)" [searchComponent]="'products'" class="w-full" [searchType]="'Products'" />
 </header>
