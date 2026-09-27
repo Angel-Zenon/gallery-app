@@ -1,0 +1,21 @@
+<p>gif-history works!</p>
+<h3> {{ query() }}  </h3>
+<div class="mt-4 overflow-x-auto">
+      <table class="min-w-full divide-y-2 divide-gray-200">
+        <thead class="ltr:text-left rtl:text-right">
+          <tr class="*:font-medium *:text-gray-900">
+            <th class="px-3 py-2 whitespace-nowrap">Order Id</th>
+            <th class="px-3 py-2 whitespace-nowrap">Customer Id</th>
+            <th class="px-3 py-2 whitespace-nowrap">Types of Products</th>
+            <th class="px-3 py-2 whitespace-nowrap">Discounted Total</th>
+            <th class="px-3 py-2 whitespace-nowrap">Total</th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-gray-200">
+          @for (order of order(); track order.id) {
+            <tr orders-table-row [cart]="order"></tr>
+          }
+        </tbody>
+      </table>
+</div>

@@ -12,13 +12,12 @@
         </a>
       </li>
     }
-    @for (label of orderService.searchHistoryKeys(); track label) {
+    @for (key of orderService.searchHistoryKeys(); track key) {
       <li>
-        <a href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-900 [.active]:bg-gray-100"  >
+        <a href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-900"  [routerLink]="['/dashboard/order-history/', key]" routerLinkActive="bg-gray-100"  >
           <i class="fa-solid fa-clock-rotate-left"></i>
-          
           <span>
-            {{ label }}
+            {{ key }}
           </span>
         </a>
       </li>

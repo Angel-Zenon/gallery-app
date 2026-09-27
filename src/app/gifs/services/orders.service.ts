@@ -41,9 +41,13 @@ export class OrdersService {
                         ...history,
                         [userId] : items
                     }))
-                    console.log(this.searchHistoryKeys())
+                    
                 } )
             );
-
     }
+    /*
+    public getOrderById(id: number) {
+        return this.http.get(`${environment.API_DUMMY}/carts/user/${id}`)
+            .pipe()
+    } */
 }
