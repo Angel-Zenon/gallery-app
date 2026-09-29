@@ -1,6 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, Signal, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { OrdersService } from 'app/gifs/services/orders.service';
+import { loadFromLocalStorage, OrdersService } from 'app/gifs/services/orders.service';
 
 
 
@@ -41,5 +41,7 @@ export class SideMenuOptions {
   
   orderService = inject(OrdersService);
   history = signal(this.orderService.searchHistoryKeys());
+
+  
 
 }

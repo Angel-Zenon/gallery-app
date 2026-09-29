@@ -1,5 +1,5 @@
-<p>gif-history works!</p>
-<h3> {{ query() }}  </h3>
+
+<h3>Carrito °{{ query() }}  </h3>
 <div class="mt-4 overflow-x-auto">
       <table class="min-w-full divide-y-2 divide-gray-200">
         <thead class="ltr:text-left rtl:text-right">
@@ -13,7 +13,7 @@
         </thead>
 
         <tbody class="divide-y divide-gray-200">
-          @for (order of order(); track order.id) {
+          @for (order of ordersByKey(); track order.id) {
             <tr orders-table-row [cart]="order"></tr>
           }
         </tbody>

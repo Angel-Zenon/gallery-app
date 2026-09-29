@@ -1,4 +1,4 @@
-import { Component, effect, inject, Query, signal } from '@angular/core';
+import { Component, computed, effect, inject, Query, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop'
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
@@ -14,7 +14,6 @@ import { OrdersTableRow } from 'app/gifs/components/orders/orders-table/orders-t
 export default class GifHistory {
   // todo : implementar la busqueda segun el query, e implemetarla con el componente de tabla 
   ordersService = inject(OrdersService);
-  order = signal<Cart[]>([]);
   query = toSignal(
     inject(ActivatedRoute).params.pipe(
       map( params => params['query'] )
@@ -22,11 +21,8 @@ export default class GifHistory {
   ) ; // transformamos el observable en una señal
   // el QUERY ES UN observable, que actualiza los valores que tiene, los actualiza de los valores que emite el Activate Route, es decir actaliza los parametros de la ruta
 
-  constructor() {
-    effect( () => {
-      this.ordersService.searchClient(this.query() ).subscribe( 
-        (resp) => this.order.set(resp)
-      )
-    })
-  }
+  ordersByKey = computed( () => {
+    return this.ordersService.getHistoryOrderByUserId(this.query());
+  })
+
 }

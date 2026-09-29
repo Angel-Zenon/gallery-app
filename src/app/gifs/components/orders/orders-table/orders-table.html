@@ -17,7 +17,7 @@
         </thead>
 
         <tbody class="divide-y divide-gray-200">
-          @for (order of ordersService.orders(); track order.id) {
+          @for (order of ordersService.orders()  ; track order.id) {
             <tr orders-table-row [cart]="order"></tr>
           }
         </tbody>
