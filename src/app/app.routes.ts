@@ -23,6 +23,12 @@ export const routes: Routes = [
                 loadComponent:  () => 
                     import('./gifs/pages/orders-page/orders-page')
             },
+            {
+                path : 'order-history/:query',
+                loadComponent:  () => 
+                    import('./gifs/pages/gif-history/gif-history')
+            },
+
 
             {
                 path :  '**',

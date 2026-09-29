@@ -10,4 +10,8 @@ import { OrdersTableRow } from './orders-table-row/orders-table-row';
 })
 export class OrdersTable {
   ordersService = inject(OrdersService);
+
+  constructor (){
+    this.ordersService.getData()
+  }
 }

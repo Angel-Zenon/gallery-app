@@ -15,7 +15,7 @@ export class OrdersTableHeader {
   // funcion que imprime en consola 
   imprimirOrder(id : number) {
     if (id > 0) {
-      this.orderService.searchClient(id).subscribe(
+      this.orderService.searchClientCarts(id).subscribe(
         (resp) => this.orderService.orders.set(resp)
       )
     } else this.orderService.getData();
